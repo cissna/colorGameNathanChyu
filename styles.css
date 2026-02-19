@@ -2,9 +2,6 @@
   --target-bg: #dce7f5;
   --ink: #14263d;
   --muted: rgba(20, 38, 61, 0.8);
-  --card: rgba(255, 255, 255, 0.8);
-  --stroke: rgba(20, 38, 61, 0.2);
-  --shadow: 0 14px 30px rgba(13, 25, 48, 0.18);
 }
 
 * {
@@ -20,32 +17,12 @@ body {
   transition: background-color 220ms ease, color 220ms ease;
 }
 
-.bg-layer {
-  position: fixed;
-  inset: 0;
-  background: radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.28), transparent 45%),
-    radial-gradient(circle at 85% 0%, rgba(255, 255, 255, 0.22), transparent 42%),
-    repeating-linear-gradient(35deg, transparent 0 22px, rgba(255, 255, 255, 0.1) 22px 44px);
-  pointer-events: none;
-}
-
 .app {
-  position: relative;
-  z-index: 1;
   max-width: 920px;
   margin: 0 auto;
   padding: 20px 14px 40px;
   display: grid;
-  gap: 14px;
-}
-
-.card {
-  background: var(--card);
-  border: 1px solid var(--stroke);
-  border-radius: 18px;
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(8px);
-  padding: 16px;
+  gap: 18px;
 }
 
 .mix-stage {
@@ -65,8 +42,8 @@ body {
   width: 100%;
   aspect-ratio: 1 / 1;
   border-radius: 16px;
-  border: 2px solid rgba(255, 255, 255, 0.4);
-  box-shadow: inset 0 0 0 1px rgba(10, 10, 10, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  box-shadow: inset 0 0 0 1px rgba(10, 10, 10, 0.28);
 }
 
 .pie-wrap {
@@ -79,8 +56,8 @@ body {
   width: min(56vw, 300px);
   aspect-ratio: 1 / 1;
   border-radius: 999px;
-  border: 5px solid rgba(255, 255, 255, 0.82);
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.22), 0 8px 20px rgba(8, 15, 30, 0.2);
+  border: 5px solid rgba(255, 255, 255, 0.84);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.24), 0 8px 20px rgba(8, 15, 30, 0.2);
   transition: background 180ms ease;
 }
 
@@ -88,40 +65,6 @@ body {
   margin: 0;
   font-size: 0.9rem;
   color: var(--muted);
-}
-
-.pie-legend {
-  width: 100%;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 8px;
-}
-
-.pie-legend li {
-  display: grid;
-  justify-items: center;
-  gap: 4px;
-  text-align: center;
-}
-
-.legend-dot {
-  width: 18px;
-  height: 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(0, 0, 0, 0.3);
-}
-
-.legend-name {
-  font-size: 0.8rem;
-  color: var(--muted);
-}
-
-.legend-val {
-  font-size: 0.84rem;
-  font-weight: 700;
 }
 
 .slider-grid {
@@ -243,8 +186,8 @@ h2 {
   align-items: center;
   padding: 8px;
   border-radius: 12px;
-  border: 1px solid var(--stroke);
-  background: rgba(255, 255, 255, 0.56);
+  border: 1px solid rgba(20, 38, 61, 0.24);
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .row-swatch {
@@ -282,10 +225,6 @@ h2 {
 
   .target-block {
     max-width: 160px;
-  }
-
-  .pie-legend {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .slider-row {

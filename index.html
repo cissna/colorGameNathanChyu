@@ -13,10 +13,8 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="bg-layer"></div>
-
     <main class="app">
-      <section class="mix-stage card">
+      <section class="mix-stage">
         <div class="target-block">
           <p class="label">Target</p>
           <div id="targetSwatch" class="target-swatch"></div>
@@ -25,11 +23,10 @@
         <div class="pie-wrap">
           <div id="pieChart" class="pie"></div>
           <p id="pieCaption" class="pie-caption">Relative mix breakdown</p>
-          <ul id="pieLegend" class="pie-legend"></ul>
         </div>
       </section>
 
-      <section class="controls card">
+      <section class="controls">
         <div id="sliders" class="slider-grid"></div>
 
         <div class="button-row">
@@ -39,7 +36,7 @@
         </div>
       </section>
 
-      <section class="results card">
+      <section class="results">
         <div class="results-head">
           <h2>Progress</h2>
           <p id="latestAccuracy">No guesses yet</p>
@@ -47,7 +44,7 @@
         <ul id="historyList" class="history"></ul>
       </section>
 
-      <section class="share card">
+      <section class="share">
         <div class="results-head">
           <h2>Share</h2>
           <button id="copyShareBtn" class="secondary">Copy</button>

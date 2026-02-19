@@ -19,7 +19,6 @@ const state = {
 
 const targetSwatch = document.getElementById("targetSwatch");
 const pieChart = document.getElementById("pieChart");
-const pieLegend = document.getElementById("pieLegend");
 const pieCaption = document.getElementById("pieCaption");
 const slidersWrap = document.getElementById("sliders");
 const latestAccuracy = document.getElementById("latestAccuracy");
@@ -161,26 +160,6 @@ function renderPie(normalized) {
   } else {
     pieChart.style.background = buildPieGradient(normalized);
     pieCaption.textContent = "Relative mix breakdown";
-  }
-
-  pieLegend.innerHTML = "";
-  for (const pigment of PIGMENTS) {
-    const li = document.createElement("li");
-
-    const dot = document.createElement("div");
-    dot.className = "legend-dot";
-    dot.style.background = rgbCss(pigment.rgb);
-
-    const name = document.createElement("div");
-    name.className = "legend-name";
-    name.textContent = pigment.name;
-
-    const val = document.createElement("div");
-    val.className = "legend-val";
-    val.textContent = `${normalized[pigment.key].toFixed(1)}%`;
-
-    li.append(dot, name, val);
-    pieLegend.appendChild(li);
   }
 }
 
@@ -332,13 +311,9 @@ function applyTheme(targetRGB) {
   if (darkText) {
     root.style.setProperty("--ink", "#11243b");
     root.style.setProperty("--muted", "rgba(17, 36, 59, 0.82)");
-    root.style.setProperty("--card", "rgba(255, 255, 255, 0.74)");
-    root.style.setProperty("--stroke", "rgba(17, 36, 59, 0.2)");
   } else {
     root.style.setProperty("--ink", "#f2f7ff");
     root.style.setProperty("--muted", "rgba(242, 247, 255, 0.86)");
-    root.style.setProperty("--card", "rgba(6, 14, 26, 0.48)");
-    root.style.setProperty("--stroke", "rgba(242, 247, 255, 0.28)");
   }
 }
 
