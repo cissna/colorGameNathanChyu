@@ -14,35 +14,27 @@
   </head>
   <body>
     <div class="bg-layer"></div>
-    <main class="app">
-      <header class="title-wrap">
-        <p class="eyebrow">Color Accuracy Challenge</p>
-        <h1>Chromix</h1>
-        <p class="subtitle">Mix with Cyan, Magenta, Yellow, White, and Black to match the hidden target.</p>
-      </header>
 
-      <section class="swatches card">
-        <div class="swatch-block">
+    <main class="app">
+      <section class="mix-stage card">
+        <div class="target-block">
           <p class="label">Target</p>
-          <div id="targetSwatch" class="swatch"></div>
+          <div id="targetSwatch" class="target-swatch"></div>
         </div>
-        <div class="swatch-block">
-          <p class="label">Your Mix</p>
-          <div id="guessSwatch" class="swatch"></div>
+
+        <div class="pie-wrap">
+          <div id="pieChart" class="pie"></div>
+          <p id="pieCaption" class="pie-caption">Relative mix breakdown</p>
+          <ul id="pieLegend" class="pie-legend"></ul>
         </div>
       </section>
 
       <section class="controls card">
-        <div class="controls-head">
-          <h2>Mix Ratios</h2>
-          <p id="totalPercent">Total: 100%</p>
-        </div>
-
         <div id="sliders" class="slider-grid"></div>
 
         <div class="button-row">
           <button id="randomizeBtn" class="secondary">Randomize Sliders</button>
-          <button id="guessBtn" class="primary">Submit Guess</button>
+          <button id="guessBtn" class="primary">Check</button>
           <button id="newGameBtn" class="ghost">New Target</button>
         </div>
       </section>
