@@ -138,7 +138,6 @@ function renderAll() {
   const normalized = normalizeWeights(state.sliderValues);
   const targetRGB = mixToRGB(state.targetWeights);
 
-  targetSwatch.style.background = rgbCss(targetRGB);
   applyTheme(targetRGB);
 
   for (const pigment of PIGMENTS) {
@@ -151,6 +150,35 @@ function renderAll() {
   renderHistory();
   renderLatestAccuracy();
   renderShare();
+  renderLastGuessSwatch();
+}
+
+function renderLastGuessSwatch() {
+  if (state.guesses.length === 0) {
+    targetSwatch.style.opacity = "0";
+    targetSwatch.style.visibility = "hidden";
+    return;
+  }
+
+  let displayRGB;
+  if (state.pieMode === "solid") {
+    if (state.guesses.length > 1) {
+      displayRGB = state.guesses[1].rgb;
+    } else {
+      targetSwatch.style.opacity = "0";
+      targetSwatch.style.visibility = "hidden";
+      return;
+    }
+  } else {
+    displayRGB = state.guesses[0].rgb;
+  }
+
+  targetSwatch.style.background = rgbCss(displayRGB);
+  targetSwatch.style.opacity = "1";
+  targetSwatch.style.visibility = "visible";
+
+  const lum = relativeLuminance(displayRGB);
+  targetSwatch.style.color = lum > 0.56 ? "#11243b" : "#f2f7ff";
 }
 
 function renderPie(normalized) {
