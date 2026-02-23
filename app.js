@@ -6,7 +6,7 @@ const PIGMENTS = [
   { key: "black", name: "Black", rgb: [10, 15, 25] },
 ];
 
-const MILESTONES = [50, 75, 90, 95, 98, 99];
+const MILESTONES = [75, 90, 95, 97, 98, 99];
 
 const state = {
   targetWeights: randomWeights(),
