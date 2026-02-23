@@ -50,6 +50,7 @@ guessBtn.addEventListener("click", () => {
     score,
     mix: normalized,
     rgb,
+    sliderValues: { ...state.sliderValues },
   });
 
   state.pieMode = "solid";
@@ -218,7 +219,20 @@ function renderHistory() {
     score.className = "row-score";
     score.textContent = `${formatScore(guess.score)}%`;
 
-    item.append(sw, text, score);
+    const restoreBtn = document.createElement("button");
+    restoreBtn.className = "restore-btn ghost";
+    restoreBtn.textContent = "Restore";
+    restoreBtn.addEventListener("click", () => {
+      if (guess.sliderValues) {
+        state.sliderValues = { ...guess.sliderValues };
+        state.pieMode = "segments";
+        state.submittedRGB = null;
+        syncSliderUI();
+        renderAll();
+      }
+    });
+
+    item.append(sw, text, score, restoreBtn);
     historyList.appendChild(item);
   }
 }

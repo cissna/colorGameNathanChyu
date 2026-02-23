@@ -190,13 +190,19 @@ h2 {
 
 .history li {
   display: grid;
-  grid-template-columns: 54px 1fr auto;
+  grid-template-columns: 54px 1fr auto auto;
   gap: 10px;
   align-items: center;
   padding: 8px;
   border-radius: 12px;
   border: 1px solid rgba(20, 38, 61, 0.24);
   background: rgba(255, 255, 255, 0.2);
+}
+
+.restore-btn {
+  padding: 6px 10px;
+  font-size: 0.75rem;
+  border-radius: 8px;
 }
 
 .row-swatch {
@@ -241,11 +247,16 @@ h2 {
   }
 
   .history li {
-    grid-template-columns: 50px 1fr;
+    grid-template-columns: 50px 1fr auto;
   }
 
   .row-score {
     justify-self: end;
     grid-column: 2;
+  }
+
+  .restore-btn {
+    grid-column: 3;
+    grid-row: 1 / 3;
   }
 }
